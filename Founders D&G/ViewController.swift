@@ -43,7 +43,7 @@ class ViewController: UIViewController {
         }
     }
     
-    private func customize(btn: UIButton) {
+    func customize(btn: UIButton) {
         btn.layer.shadowOffset = CGSize(width: 0, height: 2)
         btn.layer.shadowOpacity = 0.3
         btn.layer.shadowRadius = 3.0
