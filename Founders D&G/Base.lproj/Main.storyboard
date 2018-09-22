@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +12,80 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Founders_D_G" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nQB-bJ-KsP">
+                                <rect key="frame" x="67" y="281" width="241" height="60"/>
+                                <color key="backgroundColor" red="0.9137254901960784" green="0.11764705882352941" blue="0.38823529411764707" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="nQB-bJ-KsP" secondAttribute="height" multiplier="241:60" id="RYH-Ww-dZ1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Open Door">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="opM-Lu-gpn">
+                                <rect key="frame" x="67" y="381" width="241" height="60"/>
+                                <color key="backgroundColor" red="0.0" green="0.58823529411764708" blue="0.53333333333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Open Garage">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mqi-oh-75d">
+                                <rect key="frame" x="67" y="481" width="241" height="60"/>
+                                <color key="backgroundColor" red="1" green="0.59607843137254901" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Settings">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="f2-logo" translatesAutoresizingMaskIntoConstraints="NO" id="yQx-ba-zxZ">
+                                <rect key="frame" x="67" y="88" width="241" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="yQx-ba-zxZ" secondAttribute="height" multiplier="241:128" id="cp4-Xm-o6e"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.89411764705882346" green="0.89411764705882346" blue="0.89411764705882346" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="opM-Lu-gpn" firstAttribute="top" secondItem="nQB-bJ-KsP" secondAttribute="bottom" constant="40" id="BhP-xq-Doe"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yQx-ba-zxZ" secondAttribute="trailing" constant="67" id="C1F-T3-dvT"/>
+                            <constraint firstItem="mqi-oh-75d" firstAttribute="height" secondItem="opM-Lu-gpn" secondAttribute="height" id="D47-kB-PW3"/>
+                            <constraint firstItem="yQx-ba-zxZ" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="E9x-b6-IOc"/>
+                            <constraint firstItem="mqi-oh-75d" firstAttribute="width" secondItem="opM-Lu-gpn" secondAttribute="width" id="IZB-kl-dCA"/>
+                            <constraint firstItem="opM-Lu-gpn" firstAttribute="height" secondItem="nQB-bJ-KsP" secondAttribute="height" id="MYj-FL-FHU"/>
+                            <constraint firstItem="opM-Lu-gpn" firstAttribute="width" secondItem="nQB-bJ-KsP" secondAttribute="width" id="PPH-qp-6lu"/>
+                            <constraint firstItem="yQx-ba-zxZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="44" id="iuL-1y-tmJ"/>
+                            <constraint firstItem="nQB-bJ-KsP" firstAttribute="width" secondItem="yQx-ba-zxZ" secondAttribute="width" id="k3K-ue-B3p"/>
+                            <constraint firstItem="opM-Lu-gpn" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="lq0-3j-4hm"/>
+                            <constraint firstItem="mqi-oh-75d" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="p4L-fs-VBF"/>
+                            <constraint firstItem="yQx-ba-zxZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="67" id="ptq-xl-cUM"/>
+                            <constraint firstItem="opM-Lu-gpn" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="qOi-du-c0l"/>
+                            <constraint firstItem="mqi-oh-75d" firstAttribute="top" secondItem="opM-Lu-gpn" secondAttribute="bottom" constant="40" id="wId-L5-heg"/>
+                            <constraint firstItem="nQB-bJ-KsP" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="z5e-6j-Jg1"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="btnOpenDoor" destination="nQB-bJ-KsP" id="c7R-on-uAT"/>
+                        <outlet property="btnOpenGarage" destination="opM-Lu-gpn" id="ofk-dH-ICN"/>
+                        <outlet property="btnSettings" destination="mqi-oh-75d" id="tME-QP-ulK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="53.600000000000001" y="27.339901477832512"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="f2-logo" width="176" height="80"/>
+    </resources>
 </document>
