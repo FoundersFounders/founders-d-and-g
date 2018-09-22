@@ -16,7 +16,6 @@ class ViewController: UIViewController {
     
     // https://jgreen3d.com/animate-ios-buttons-touch/
     @IBAction func buttonTouched(_ sender: UIButton) {
-        print("pressed! ()")
         UIButton.animate(withDuration: 0.2,
                          animations: {
                             sender.transform = CGAffineTransform(scaleX: 0.975, y: 0.96)
@@ -25,7 +24,23 @@ class ViewController: UIViewController {
                             UIButton.animate(withDuration: 0.2, animations: {
                                 sender.transform = CGAffineTransform.identity
                             })
+                            
+                            self.showToast(controller: self, message : "Opening...", seconds: 1.0)
         })
+    }
+    
+    // https://stackoverflow.com/a/49454931
+    func showToast(controller: UIViewController, message : String, seconds: Double) {
+        let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+        alert.view.backgroundColor = UIColor.black
+        alert.view.alpha = 0.6
+        alert.view.layer.cornerRadius = 15
+        
+        controller.present(alert, animated: true)
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + seconds) {
+            alert.dismiss(animated: true)
+        }
     }
     
     private func customize(btn: UIButton) {
@@ -36,7 +51,6 @@ class ViewController: UIViewController {
         
         btn.addTarget(self, action: #selector(buttonTouched(_:)), for: .touchUpInside)
         
-        buttonTouched(btn)
         //        btnOpenDoor.layer.masksToBounds = false
         
 //        btn.frame.width = CGFloat(240)
