@@ -14,8 +14,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var btnOpenGarageDoor: UIButton!
     @IBOutlet weak var btnSettings: UIButton!
     
-    var quickAction: Int = 0
-    
     // https://jgreen3d.com/animate-ios-buttons-touch/
     @IBAction func buttonTouched(_ sender: UIButton) {
         UIButton.animate(withDuration: 0.2,
@@ -27,18 +25,18 @@ class ViewController: UIViewController {
                                 sender.transform = CGAffineTransform.identity
                             })
                             
-                            self.showToast(controller: self, message : "Opening...", seconds: 1.0)
+                            self.showToast(message : "Opening...", seconds: 1.0)
         })
     }
     
     // https://stackoverflow.com/a/49454931
-    func showToast(controller: UIViewController, message : String, seconds: Double) {
+    func showToast(message : String, seconds: Double) {
         let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
         alert.view.backgroundColor = UIColor.black
         alert.view.alpha = 0.6
         alert.view.layer.cornerRadius = 15
         
-        controller.present(alert, animated: true)
+        self.present(alert, animated: true)
         
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + seconds) {
             alert.dismiss(animated: true)
@@ -52,11 +50,6 @@ class ViewController: UIViewController {
         btn.layer.cornerRadius = 3.0
         
         btn.addTarget(self, action: #selector(buttonTouched(_:)), for: .touchUpInside)
-        
-        //        btnOpenDoor.layer.masksToBounds = false
-        
-//        btn.frame.width = CGFloat(240)
-//        btn.frame.height = CGFloat(128)
     }
 
     override func viewDidLoad() {
@@ -66,18 +59,11 @@ class ViewController: UIViewController {
         customize(btn: btnOpenFrontDoor)
         customize(btn: btnOpenGarageDoor)
         customize(btn: btnSettings)
-        
-        
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        print(quickAction)
-        
-        if (quickAction > 0) {
-//            showToast(controller: self, message: "Opening from quick action...", seconds: 1)
-        }
+    func handle(shortcut: ShortcutEnum) {
+        let action = shortcut.rawValue
+        showToast(message: "Opening from \(action)", seconds: 1.5)
     }
-
-
 }
 

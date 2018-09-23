@@ -12,37 +12,21 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    
-    enum Shortcut: String {
-        case openFrontDoor = "openFrontDoor"
-        case openGarageDoor = "openGarageDoor"
-    }
 
     func handleQuickAction(shortcutItem: UIApplicationShortcutItem) -> Bool {
         var quickActionHandled = false
         
         let type = shortcutItem.type.components(separatedBy: ".").last!
         
-        if let shortcutType = Shortcut.init(rawValue: type) {
-            switch shortcutType {
-            case .openFrontDoor:
-                quickActionHandled = true
-            case .openGarageDoor:
-                quickActionHandled = true
-            }
-        }
-        
-        if (quickActionHandled) {
+        if let shortcutType = ShortcutEnum.init(rawValue: type) {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let targetVC = storyboard.instantiateViewController(withIdentifier :"ViewController") as! ViewController
             
-            targetVC.quickAction = 1
-            
-            print("quick action!", terminator: "\n")
-            
             self.window?.rootViewController = targetVC
             
-            targetVC.showToast(controller: targetVC, message: "From App Delegate!", seconds: 3)
+            targetVC.handle(shortcut: shortcutType)
+            
+            quickActionHandled = true
         }
         
         return quickActionHandled
