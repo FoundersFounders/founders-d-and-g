@@ -12,7 +12,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Founders_D_G" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="Founders_D_G" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -24,7 +24,7 @@
                                     <constraint firstAttribute="width" secondItem="nQB-bJ-KsP" secondAttribute="height" multiplier="241:60" id="RYH-Ww-dZ1"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="Open Door">
+                                <state key="normal" title="Open Front Door">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -33,7 +33,7 @@
                                 <rect key="frame" x="67" y="381" width="241" height="60"/>
                                 <color key="backgroundColor" red="0.0" green="0.58823529411764708" blue="0.53333333333333333" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="Open Garage">
+                                <state key="normal" title="Open Garage Door">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -75,9 +75,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="btnOpenDoor" destination="nQB-bJ-KsP" id="c7R-on-uAT"/>
-                        <outlet property="btnOpenGarage" destination="opM-Lu-gpn" id="ofk-dH-ICN"/>
-                        <outlet property="btnSettings" destination="mqi-oh-75d" id="tME-QP-ulK"/>
+                        <outlet property="btnOpenFrontDoor" destination="nQB-bJ-KsP" id="chV-45-Jfk"/>
+                        <outlet property="btnOpenGarageDoor" destination="opM-Lu-gpn" id="kFV-6M-bBb"/>
+                        <outlet property="btnSettings" destination="mqi-oh-75d" id="weM-Vg-RhI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

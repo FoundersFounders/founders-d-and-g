@@ -12,11 +12,49 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    enum Shortcut: String {
+        case openFrontDoor = "openFrontDoor"
+        case openGarageDoor = "openGarageDoor"
+    }
 
+    func handleQuickAction(shortcutItem: UIApplicationShortcutItem) -> Bool {
+        var quickActionHandled = false
+        
+        let type = shortcutItem.type.components(separatedBy: ".").last!
+        
+        if let shortcutType = Shortcut.init(rawValue: type) {
+            switch shortcutType {
+            case .openFrontDoor:
+                quickActionHandled = true
+            case .openGarageDoor:
+                quickActionHandled = true
+            }
+        }
+        
+        if (quickActionHandled) {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let targetVC = storyboard.instantiateViewController(withIdentifier :"ViewController") as! ViewController
+            
+            targetVC.quickAction = 1
+            
+            print("quick action!", terminator: "\n")
+            
+            self.window?.rootViewController = targetVC
+            
+            targetVC.showToast(controller: targetVC, message: "From App Delegate!", seconds: 3)
+        }
+        
+        return quickActionHandled
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         return true
+    }
+    
+    func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
+        completionHandler(handleQuickAction(shortcutItem: shortcutItem))
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

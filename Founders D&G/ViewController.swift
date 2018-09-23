@@ -10,9 +10,11 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var btnOpenDoor: UIButton!
-    @IBOutlet weak var btnOpenGarage: UIButton!
+    @IBOutlet weak var btnOpenFrontDoor: UIButton!
+    @IBOutlet weak var btnOpenGarageDoor: UIButton!
     @IBOutlet weak var btnSettings: UIButton!
+    
+    var quickAction: Int = 0
     
     // https://jgreen3d.com/animate-ios-buttons-touch/
     @IBAction func buttonTouched(_ sender: UIButton) {
@@ -56,14 +58,24 @@ class ViewController: UIViewController {
 //        btn.frame.width = CGFloat(240)
 //        btn.frame.height = CGFloat(128)
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        customize(btn: btnOpenDoor)
-        customize(btn: btnOpenGarage)
+        customize(btn: btnOpenFrontDoor)
+        customize(btn: btnOpenGarageDoor)
         customize(btn: btnSettings)
+        
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        print(quickAction)
+        
+        if (quickAction > 0) {
+//            showToast(controller: self, message: "Opening from quick action...", seconds: 1)
+        }
     }
 
 
