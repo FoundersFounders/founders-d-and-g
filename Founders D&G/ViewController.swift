@@ -25,12 +25,14 @@ class ViewController: UIViewController {
                                 sender.transform = CGAffineTransform.identity
                             })
                             
-                            self.showToast(message : "Opening...", seconds: 1.0)
+                            let btnTitle = sender.titleLabel?.text ?? "[Button Title missing]"
+                            
+                            self.showToast(message : "Opening from \"\(btnTitle)\"")
         })
     }
     
     // https://stackoverflow.com/a/49454931
-    func showToast(message : String, seconds: Double) {
+    func showToast(message : String, seconds: Double = 1.5) {
         let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
         alert.view.backgroundColor = UIColor.black
         alert.view.alpha = 0.6
@@ -63,7 +65,7 @@ class ViewController: UIViewController {
     
     func handle(shortcut: ShortcutEnum) {
         let action = shortcut.rawValue
-        showToast(message: "Opening from \(action)", seconds: 1.5)
+        showToast(message: "Opening from \(action)")
     }
 }
 
