@@ -13,7 +13,35 @@
 		A990569921566C1B00CED4EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A990569721566C1B00CED4EB /* LaunchScreen.storyboard */; };
 		A99056A22157A63900CED4EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A99056A12157A63900CED4EB /* Assets.xcassets */; };
 		A99056A42157BFC200CED4EB /* ShortcutEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99056A32157BFC200CED4EB /* ShortcutEnum.swift */; };
+		A99056AC2157E08500CED4EB /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A99056AB2157E08500CED4EB /* NotificationCenter.framework */; };
+		A99056AF2157E08500CED4EB /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99056AE2157E08500CED4EB /* TodayViewController.swift */; };
+		A99056B22157E08500CED4EB /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A99056B02157E08500CED4EB /* MainInterface.storyboard */; };
+		A99056B62157E08500CED4EB /* widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A99056A92157E08500CED4EB /* widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A99056B42157E08500CED4EB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A990568321566C1900CED4EB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A99056A82157E08500CED4EB;
+			remoteInfo = widget;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A99056BA2157E08500CED4EB /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				A99056B62157E08500CED4EB /* widget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		A990568B21566C1900CED4EB /* Founders D&G.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Founders D&G.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -25,6 +53,12 @@
 		A99056A02156DCF100CED4EB /* Founders D&G.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Founders D&G.entitlements"; sourceTree = "<group>"; };
 		A99056A12157A63900CED4EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A99056A32157BFC200CED4EB /* ShortcutEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutEnum.swift; sourceTree = "<group>"; };
+		A99056A92157E08500CED4EB /* widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = widget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		A99056AB2157E08500CED4EB /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		A99056AE2157E08500CED4EB /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		A99056B12157E08500CED4EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		A99056B32157E08500CED4EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A99056BB2158CFD900CED4EB /* widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = widget.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +69,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A99056A62157E08500CED4EB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A99056AC2157E08500CED4EB /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -42,6 +84,8 @@
 			isa = PBXGroup;
 			children = (
 				A990568D21566C1900CED4EB /* Founders D&G */,
+				A99056AD2157E08500CED4EB /* widget */,
+				A99056AA2157E08500CED4EB /* Frameworks */,
 				A990568C21566C1900CED4EB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -50,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				A990568B21566C1900CED4EB /* Founders D&G.app */,
+				A99056A92157E08500CED4EB /* widget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -69,6 +114,25 @@
 			path = "Founders D&G";
 			sourceTree = "<group>";
 		};
+		A99056AA2157E08500CED4EB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A99056AB2157E08500CED4EB /* NotificationCenter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A99056AD2157E08500CED4EB /* widget */ = {
+			isa = PBXGroup;
+			children = (
+				A99056BB2158CFD900CED4EB /* widget.entitlements */,
+				A99056AE2157E08500CED4EB /* TodayViewController.swift */,
+				A99056B02157E08500CED4EB /* MainInterface.storyboard */,
+				A99056B32157E08500CED4EB /* Info.plist */,
+			);
+			path = widget;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -79,15 +143,34 @@
 				A990568721566C1900CED4EB /* Sources */,
 				A990568821566C1900CED4EB /* Frameworks */,
 				A990568921566C1900CED4EB /* Resources */,
+				A99056BA2157E08500CED4EB /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				A99056B52157E08500CED4EB /* PBXTargetDependency */,
 			);
 			name = "Founders D&G";
 			productName = "Founders D&G";
 			productReference = A990568B21566C1900CED4EB /* Founders D&G.app */;
 			productType = "com.apple.product-type.application";
+		};
+		A99056A82157E08500CED4EB /* widget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A99056B72157E08500CED4EB /* Build configuration list for PBXNativeTarget "widget" */;
+			buildPhases = (
+				A99056A52157E08500CED4EB /* Sources */,
+				A99056A62157E08500CED4EB /* Frameworks */,
+				A99056A72157E08500CED4EB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = widget;
+			productName = widget;
+			productReference = A99056A92157E08500CED4EB /* widget.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -103,7 +186,15 @@
 						CreatedOnToolsVersion = 10.0;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
-								enabled = 0;
+								enabled = 1;
+							};
+						};
+					};
+					A99056A82157E08500CED4EB = {
+						CreatedOnToolsVersion = 10.0;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
 							};
 						};
 					};
@@ -123,6 +214,7 @@
 			projectRoot = "";
 			targets = (
 				A990568A21566C1900CED4EB /* Founders D&G */,
+				A99056A82157E08500CED4EB /* widget */,
 			);
 		};
 /* End PBXProject section */
@@ -135,6 +227,14 @@
 				A990569921566C1B00CED4EB /* LaunchScreen.storyboard in Resources */,
 				A99056A22157A63900CED4EB /* Assets.xcassets in Resources */,
 				A990569421566C1900CED4EB /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A99056A72157E08500CED4EB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A99056B22157E08500CED4EB /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,7 +251,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A99056A52157E08500CED4EB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A99056AF2157E08500CED4EB /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A99056B52157E08500CED4EB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A99056A82157E08500CED4EB /* widget */;
+			targetProxy = A99056B42157E08500CED4EB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		A990569221566C1900CED4EB /* Main.storyboard */ = {
@@ -168,6 +284,14 @@
 				A990569821566C1B00CED4EB /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		A99056B02157E08500CED4EB /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A99056B12157E08500CED4EB /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -292,7 +416,9 @@
 		A990569E21566C1B00CED4EB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Founders D&G/Founders D&G.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2A9STRYMA8;
@@ -305,14 +431,16 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		A990569F21566C1B00CED4EB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Founders D&G/Founders D&G.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2A9STRYMA8;
@@ -325,7 +453,51 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		A99056B82157E08500CED4EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = widget/widget.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2A9STRYMA8;
+				INFOPLIST_FILE = widget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Personal.Founders-D-G.widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		A99056B92157E08500CED4EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = widget/widget.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2A9STRYMA8;
+				INFOPLIST_FILE = widget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Personal.Founders-D-G.widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -346,6 +518,15 @@
 			buildConfigurations = (
 				A990569E21566C1B00CED4EB /* Debug */,
 				A990569F21566C1B00CED4EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A99056B72157E08500CED4EB /* Build configuration list for PBXNativeTarget "widget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A99056B82157E08500CED4EB /* Debug */,
+				A99056B92157E08500CED4EB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
