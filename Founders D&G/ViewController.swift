@@ -50,6 +50,7 @@ class ViewController: UIViewController {
         btn.layer.shadowOpacity = 0.3
         btn.layer.shadowRadius = 3.0
         btn.layer.cornerRadius = 3.0
+        btn.layer.masksToBounds = true
         
         btn.addTarget(self, action: #selector(buttonTouched(_:)), for: .touchUpInside)
     }
