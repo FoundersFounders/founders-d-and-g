@@ -16,23 +16,13 @@ class ViewController: UIViewController {
     
     // https://jgreen3d.com/animate-ios-buttons-touch/
     @IBAction func buttonTouched(_ sender: UIButton) {
-        UIButton.animate(withDuration: 0.2,
-                         animations: {
-                            sender.transform = CGAffineTransform(scaleX: 0.975, y: 0.96)
-        },
-                         completion: { finish in
-                            UIButton.animate(withDuration: 0.2, animations: {
-                                sender.transform = CGAffineTransform.identity
-                            })
-                            
-                            let btnTitle = sender.titleLabel?.text ?? "[Button Title missing]"
-                            
-                            self.showToast(message : "Opening from \"\(btnTitle)\"")
-        })
+        animate(on: self, btn: sender, onComplete: {() -> Void in
+            let btnTitle = sender.titleLabel?.text ?? "[Button Title missing]"
+            self.showToast(message : "Opening from \"\(btnTitle)\"")})
     }
     
     // https://stackoverflow.com/a/49454931
-    func showToast(message : String, seconds: Double = 1.5) {
+    private func showToast(message : String, seconds: Double = 1.5) {
         let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
         alert.view.backgroundColor = UIColor.black
         alert.view.alpha = 0.6
@@ -45,12 +35,10 @@ class ViewController: UIViewController {
         }
     }
     
-    func customize(btn: UIButton) {
-        btn.layer.shadowOffset = CGSize(width: 0, height: 2)
-        btn.layer.shadowOpacity = 0.3
-        btn.layer.shadowRadius = 3.0
+    private func customize(btn: UIButton) {
+        addShadowTo(btn: btn)
+        
         btn.layer.cornerRadius = 3.0
-        btn.layer.masksToBounds = true
         
         btn.addTarget(self, action: #selector(buttonTouched(_:)), for: .touchUpInside)
     }

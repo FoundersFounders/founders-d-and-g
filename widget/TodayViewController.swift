@@ -16,26 +16,14 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     
     // https://jgreen3d.com/animate-ios-buttons-touch/
     @IBAction func buttonTouched(_ sender: UIButton) {
-        UIButton.animate(withDuration: 0.2,
-                         animations: {
-                            sender.transform = CGAffineTransform(scaleX: 0.925, y: 0.91)
-        },
-                         completion: { finish in
-                            UIButton.animate(withDuration: 0.2, animations: {
-                                sender.transform = CGAffineTransform.identity
-                            })
-        })
+        animate(on: self, btn: sender, onComplete: {() in })
     }
     
     func customize(btn: UIButton) {        
         // Make it like a circle
         btn.layer.cornerRadius = btn.frame.size.width / 2
         
-        // Add a nice shadow
-        btn.layer.shadowOffset = CGSize(width: 0, height: 2)
-        btn.layer.shadowOpacity = 0.3
-        btn.layer.shadowRadius = 3.0
-        btn.layer.masksToBounds = false
+        addShadowTo(btn: btn)
         
         // Increase size of button's image
         btn.imageEdgeInsets = UIEdgeInsets(top: 65, left: 65, bottom: 65, right: 65)

@@ -18,6 +18,8 @@
 		A99056B22157E08500CED4EB /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A99056B02157E08500CED4EB /* MainInterface.storyboard */; };
 		A99056B62157E08500CED4EB /* widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A99056A92157E08500CED4EB /* widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A99056BC2158D28000CED4EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A99056A12157A63900CED4EB /* Assets.xcassets */; };
+		A99056BE215AB18200CED4EB /* ButtonUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99056BD215AB18200CED4EB /* ButtonUtil.swift */; };
+		A99056BF215AB18300CED4EB /* ButtonUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99056BD215AB18200CED4EB /* ButtonUtil.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,7 @@
 		A99056B12157E08500CED4EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		A99056B32157E08500CED4EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A99056BB2158CFD900CED4EB /* widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = widget.entitlements; sourceTree = "<group>"; };
+		A99056BD215AB18200CED4EB /* ButtonUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonUtil.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +114,7 @@
 				A990569721566C1B00CED4EB /* LaunchScreen.storyboard */,
 				A990569A21566C1B00CED4EB /* Info.plist */,
 				A99056A32157BFC200CED4EB /* ShortcutEnum.swift */,
+				A99056BD215AB18200CED4EB /* ButtonUtil.swift */,
 			);
 			path = "Founders D&G";
 			sourceTree = "<group>";
@@ -248,6 +252,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A990569121566C1900CED4EB /* ViewController.swift in Sources */,
+				A99056BE215AB18200CED4EB /* ButtonUtil.swift in Sources */,
 				A99056A42157BFC200CED4EB /* ShortcutEnum.swift in Sources */,
 				A990568F21566C1900CED4EB /* AppDelegate.swift in Sources */,
 			);
@@ -258,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A99056AF2157E08500CED4EB /* TodayViewController.swift in Sources */,
+				A99056BF215AB18300CED4EB /* ButtonUtil.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
