@@ -9,22 +9,6 @@
 		<dict>
 			<key>Type</key>
 			<string>PSGroupSpecifier</string>
-			<key>FooterText</key>
-			<string>When activated, you can trigger Siri and say &apos;Open Founders front door&apos; or &apos;Open Founders garage door&apos;.</string>
-		</dict>
-		<dict>
-			<key>Type</key>
-			<string>PSToggleSwitchSpecifier</string>
-			<key>Title</key>
-			<string>Siri integration</string>
-			<key>Key</key>
-			<string>siri_preference</string>
-			<key>DefaultValue</key>
-			<true/>
-		</dict>
-		<dict>
-			<key>Type</key>
-			<string>PSGroupSpecifier</string>
 			<key>Title</key>
 			<string>About</string>
 			<key>FooterText</key>
