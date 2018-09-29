@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import CoreLocation
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    let locationManager = CLLocationManager()
 
     func handleQuickAction(shortcutItem: UIApplicationShortcutItem) -> Bool {
         var quickActionHandled = false
@@ -34,6 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        locationManager.requestAlwaysAuthorization()
         return true
     }
     
