@@ -21,6 +21,9 @@
 		A99056BE215AB18200CED4EB /* ButtonUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99056BD215AB18200CED4EB /* ButtonUtil.swift */; };
 		A99056BF215AB18300CED4EB /* ButtonUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99056BD215AB18200CED4EB /* ButtonUtil.swift */; };
 		A99C4BFF215AD668003D8907 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A99C4BFE215AD668003D8907 /* Settings.bundle */; };
+		A9AF0C8821611B8A003713FC /* SlackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AF0C8721611B8A003713FC /* SlackViewController.swift */; };
+		A9AF0C8A216176D6003713FC /* Slack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AF0C89216176D6003713FC /* Slack.swift */; };
+		A9AF0C8C216181DF003713FC /* SlackUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AF0C8B216181DF003713FC /* SlackUtil.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +68,9 @@
 		A99056BB2158CFD900CED4EB /* widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = widget.entitlements; sourceTree = "<group>"; };
 		A99056BD215AB18200CED4EB /* ButtonUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonUtil.swift; sourceTree = "<group>"; };
 		A99C4BFE215AD668003D8907 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		A9AF0C8721611B8A003713FC /* SlackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlackViewController.swift; sourceTree = "<group>"; };
+		A9AF0C89216176D6003713FC /* Slack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slack.swift; sourceTree = "<group>"; };
+		A9AF0C8B216181DF003713FC /* SlackUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlackUtil.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +124,9 @@
 				A99056A32157BFC200CED4EB /* ShortcutEnum.swift */,
 				A99056BD215AB18200CED4EB /* ButtonUtil.swift */,
 				A99C4BFE215AD668003D8907 /* Settings.bundle */,
+				A9AF0C8721611B8A003713FC /* SlackViewController.swift */,
+				A9AF0C89216176D6003713FC /* Slack.swift */,
+				A9AF0C8B216181DF003713FC /* SlackUtil.swift */,
 			);
 			path = "Founders D&G";
 			sourceTree = "<group>";
@@ -257,8 +266,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A990569121566C1900CED4EB /* ViewController.swift in Sources */,
+				A9AF0C8C216181DF003713FC /* SlackUtil.swift in Sources */,
+				A9AF0C8821611B8A003713FC /* SlackViewController.swift in Sources */,
 				A99056BE215AB18200CED4EB /* ButtonUtil.swift in Sources */,
 				A99056A42157BFC200CED4EB /* ShortcutEnum.swift in Sources */,
+				A9AF0C8A216176D6003713FC /* Slack.swift in Sources */,
 				A990568F21566C1900CED4EB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

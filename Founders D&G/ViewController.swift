@@ -17,8 +17,10 @@ class ViewController: UIViewController {
     // https://jgreen3d.com/animate-ios-buttons-touch/
     @IBAction func buttonTouched(_ sender: UIButton) {
         animate(on: self, btn: sender, onComplete: {() -> Void in
-            let btnTitle = sender.titleLabel?.text ?? "[Button Title missing]"
-            self.showToast(message : "Opening from \"\(btnTitle)\"")})
+//            let btnTitle = sender.titleLabel?.text ?? "[Button Title missing]"
+//            self.showToast(message : "Opening from \"\(btnTitle)\"")
+            self.present(SlackViewController(), animated: true, completion: nil)
+        })
     }
     
     // https://stackoverflow.com/a/49454931
