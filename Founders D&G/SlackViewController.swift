@@ -8,6 +8,7 @@
 
 import Foundation
 import WebKit
+import Alamofire
 
 class SlackViewController: UIViewController, WKNavigationDelegate {
     
@@ -60,7 +61,24 @@ class SlackViewController: UIViewController, WKNavigationDelegate {
     }
     
     func saveAccessToken(code: String) {
-        // TODO get access token
-        defaults.set(code, forKey: SlackUtil.defaultKey)
+        let url = URL(string: "https://slack.com/api/oauth.access?client_id=\(SlackUtil.clientID)&client_secret=\(SlackUtil.clientSecret)&code=\(code)")
+        
+        Alamofire.request(url!, method: .get)
+            .validate()
+            .responseJSON(completionHandler: {response in
+                guard response.result.isSuccess else {
+                    print("Error obtaining access_token from Slack API")
+                    return
+                }
+                
+                guard let value = response.result.value as? [String: Any],
+                    let access_token = value["access_token"] as? String else {
+                        print("Error response from Slack API while retrieving access_token")
+                        return
+                }
+                
+                self.defaults.set(access_token, forKey: SlackUtil.defaultKey)
+                print("Access Token obtained: \(access_token)")
+            })
     }
 }
