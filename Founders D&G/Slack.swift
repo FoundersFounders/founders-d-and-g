@@ -7,11 +7,10 @@
 //
 
 import Foundation
-import Alamofire
 
 class Slack {
     
-    private let defaults = UserDefaults.standard
+    let defaults = UserDefaults.standard
     
     func isAuthenticated() -> Bool {
         return defaults.string(forKey: "code") != nil
@@ -26,22 +25,9 @@ class Slack {
     }
     
     private func open(door: ShortcutEnum) {
-        let msg = "Message sent from iOS simulator as a GET"
-        let url = URL(string: "https://slack.com/api/chat.postMessage")!
-        
         if let accessToken = getAccessToken() {
             switch door {
             case .openFrontDoor:
-                
-                let parameters: Parameters = [
-                    "token": accessToken,
-                    "channel": "general",
-                    "text": msg,
-                    "link_names": 1,
-                    "as_user": true
-                ]
-                
-                Alamofire.request(url, method: .get, parameters: parameters)//, encoding: URLEncoding(destination: .queryString), headers: nil)
                 break
             case .openGarageDoor:
                 break
