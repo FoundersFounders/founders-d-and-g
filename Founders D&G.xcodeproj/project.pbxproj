@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A96261E22164AC7F00EF8580 /* SlackUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AF0C8B216181DF003713FC /* SlackUtil.swift */; };
 		A990568F21566C1900CED4EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A990568E21566C1900CED4EB /* AppDelegate.swift */; };
 		A990569121566C1900CED4EB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A990569021566C1900CED4EB /* ViewController.swift */; };
 		A990569421566C1900CED4EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A990569221566C1900CED4EB /* Main.storyboard */; };
@@ -23,7 +24,6 @@
 		A99C4BFF215AD668003D8907 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A99C4BFE215AD668003D8907 /* Settings.bundle */; };
 		A9AF0C8821611B8A003713FC /* SlackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AF0C8721611B8A003713FC /* SlackViewController.swift */; };
 		A9AF0C8A216176D6003713FC /* Slack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AF0C89216176D6003713FC /* Slack.swift */; };
-		A9AF0C8C216181DF003713FC /* SlackUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AF0C8B216181DF003713FC /* SlackUtil.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -266,7 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A990569121566C1900CED4EB /* ViewController.swift in Sources */,
-				A9AF0C8C216181DF003713FC /* SlackUtil.swift in Sources */,
+				A96261E22164AC7F00EF8580 /* SlackUtil.swift in Sources */,
 				A9AF0C8821611B8A003713FC /* SlackViewController.swift in Sources */,
 				A99056BE215AB18200CED4EB /* ButtonUtil.swift in Sources */,
 				A99056A42157BFC200CED4EB /* ShortcutEnum.swift in Sources */,

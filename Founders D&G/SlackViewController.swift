@@ -60,7 +60,43 @@ class SlackViewController: UIViewController, WKNavigationDelegate {
     }
     
     func saveAccessToken(code: String) {
-        // TODO get access token
-        defaults.set(code, forKey: SlackUtil.defaultKey)
+        let headers = ["Content-Type": "application/x-www-form-urlencoded"]
+        
+        let postData = NSMutableData(data: "client_id=\(SlackUtil.clientID)".data(using: String.Encoding.utf8)!)
+        postData.append("&client_secret=\(SlackUtil.clientSecret)".data(using: String.Encoding.utf8)!)
+        postData.append("&code=\(code)".data(using: String.Encoding.utf8)!)
+        
+        let request = NSMutableURLRequest(url: NSURL(string: "https://slack.com/api/oauth.access")! as URL,
+                                          cachePolicy: .useProtocolCachePolicy,
+                                          timeoutInterval: 10.0)
+        request.httpMethod = "POST"
+        request.allHTTPHeaderFields = headers
+        request.httpBody = postData as Data
+        
+        let session = URLSession.shared
+        let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
+            if (error == nil) {
+                do {
+                    if let responseData = data {
+                        guard let jsonData = try JSONSerialization.jsonObject(with: responseData, options: [])
+                        as? [String: Any] else {
+                            print("Error trying to convert data to JSON")
+                            return
+                        }
+                    
+                        guard let access_token = jsonData["access_token"] as? String else {
+                            print("Error trying to get access_token from data")
+                            return
+                        }
+                        
+                        self.defaults.set(access_token, forKey: SlackUtil.defaultKey)
+                    }
+                } catch {
+                    print("Error trying to convert data to JSON")
+                }
+            }
+        })
+        
+        dataTask.resume()
     }
 }

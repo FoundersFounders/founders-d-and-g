@@ -14,12 +14,18 @@ class ViewController: UIViewController {
     @IBOutlet weak var btnOpenGarageDoor: UIButton!
     @IBOutlet weak var btnSettings: UIButton!
     
+    private let slack = Slack()
+    
     // https://jgreen3d.com/animate-ios-buttons-touch/
     @IBAction func buttonTouched(_ sender: UIButton) {
         animate(on: self, btn: sender, onComplete: {() -> Void in
 //            let btnTitle = sender.titleLabel?.text ?? "[Button Title missing]"
 //            self.showToast(message : "Opening from \"\(btnTitle)\"")
-            self.present(SlackViewController(), animated: true, completion: nil)
+            if self.slack.isAuthenticated() {
+                self.slack.openFrontDoor()
+            } else {
+                self.present(SlackViewController(), animated: true, completion: nil)
+            }
         })
     }
     
