@@ -7,8 +7,31 @@
 //
 
 import Foundation
+import CoreLocation
 
 class Slack {
+
+    private let manager = CLLocationManager()
+    
+    init() {
+        manager.desiredAccuracy = kCLLocationAccuracyBest
+        manager.requestWhenInUseAuthorization()
+        manager.startUpdatingLocation()
+    }
+    
+    func isCloseToTheBuilding() -> Bool {
+        if let location = manager.location {
+            let myCoordinates = location.coordinate
+            let myLocation = CLLocation(latitude: myCoordinates.latitude, longitude: myCoordinates.longitude)
+            let foundersFoundersLocation = CLLocation(latitude: 41.161860, longitude: -8.602319)
+            
+            let distanceToFoundersFounders = myLocation.distance(from: foundersFoundersLocation)
+            
+            return distanceToFoundersFounders <= 100 // in meters
+        }
+        
+        return true
+    }
     
     func isAuthenticated() -> Bool {
         return getAccessToken() != nil

@@ -54,6 +54,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A96261E62167BEDF00EF8580 /* FoundersFoundersLocation.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = FoundersFoundersLocation.gpx; sourceTree = "<group>"; };
 		A990568B21566C1900CED4EB /* Founders D&G.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Founders D&G.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A990568E21566C1900CED4EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A990569021566C1900CED4EB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -120,6 +121,7 @@
 				A99056A02156DCF100CED4EB /* Founders D&G.entitlements */,
 				A990568E21566C1900CED4EB /* AppDelegate.swift */,
 				A990569021566C1900CED4EB /* ViewController.swift */,
+				A96261E62167BEDF00EF8580 /* FoundersFoundersLocation.gpx */,
 				A990569221566C1900CED4EB /* Main.storyboard */,
 				A99056A12157A63900CED4EB /* Assets.xcassets */,
 				A990569721566C1B00CED4EB /* LaunchScreen.storyboard */,

@@ -73,7 +73,11 @@ class ViewController: UIViewController {
         if !self.slack.isAuthenticated() {
             self.present(SlackViewController(), animated: true)
         } else {
-            openDoor(shortcut: shortcut)
+            if (slack.isCloseToTheBuilding()) {
+                openDoor(shortcut: shortcut)
+            } else {
+                self.showToast(message : "You are too far from Founders Founders...")
+            }
         }
     }
     

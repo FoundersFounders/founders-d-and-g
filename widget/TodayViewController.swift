@@ -21,12 +21,17 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         animate(on: self, btn: sender, onComplete: {() in
             switch sender {
             case self.btnOpenFrontDoor:
-                self.slack.openFrontDoor()
+                if (self.slack.isCloseToTheBuilding()) {
+                    self.slack.openFrontDoor()
+                }
                 break
             case self.btnOpenGarageDoor:
-                self.slack.openGarageDoor()
+                if (self.slack.isCloseToTheBuilding()) {
+                    self.slack.openGarageDoor()
+                }
                 break
             default:
+                print("Unrecognized button touched")
                 break
             }
         })
