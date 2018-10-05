@@ -13,22 +13,22 @@ class TodayViewController: UIViewController, NCWidgetProviding {
 
     @IBOutlet weak var btnOpenFrontDoor: UIButton!
     @IBOutlet weak var btnOpenGarageDoor: UIButton!
+    @IBOutlet weak var lblAuthentication: UILabel!
     
     private let slack = Slack()
     
     // https://jgreen3d.com/animate-ios-buttons-touch/
     @IBAction func buttonTouched(_ sender: UIButton) {
+        if (!self.slack.isCloseToTheBuilding()) {
+            return
+        }
         animate(on: self, btn: sender, onComplete: {() in
             switch sender {
             case self.btnOpenFrontDoor:
-                if (self.slack.isCloseToTheBuilding()) {
-                    self.slack.openFrontDoor()
-                }
+                self.slack.openFrontDoor()
                 break
             case self.btnOpenGarageDoor:
-                if (self.slack.isCloseToTheBuilding()) {
-                    self.slack.openGarageDoor()
-                }
+                self.slack.openGarageDoor()
                 break
             default:
                 print("Unrecognized button touched")
@@ -55,6 +55,14 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         
         customize(btn: btnOpenFrontDoor)
         customize(btn: btnOpenGarageDoor)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        let isAuthenticated = slack.isAuthenticated()
+        
+        lblAuthentication.isHidden = isAuthenticated
+        btnOpenFrontDoor.isHidden = !isAuthenticated
+        btnOpenGarageDoor.isHidden = !isAuthenticated
     }
         
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {

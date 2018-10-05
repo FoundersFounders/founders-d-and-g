@@ -17,6 +17,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="110"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You need to authenticate first" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Fj-hP-kof">
+                                <rect key="frame" x="47.5" y="44.5" width="225" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ub6-sl-2Aq">
                                 <rect key="frame" x="199" y="14" width="82.5" height="82.5"/>
                                 <color key="backgroundColor" red="0.2470588235" green="0.57647058819999997" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -37,8 +43,10 @@
                             </button>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="2Fj-hP-kof" firstAttribute="centerY" secondItem="ssy-KU-ocm" secondAttribute="centerY" id="0f9-JQ-ZaX"/>
                             <constraint firstItem="Ub6-sl-2Aq" firstAttribute="centerY" secondItem="ssy-KU-ocm" secondAttribute="centerY" id="2f5-yk-wDS"/>
                             <constraint firstItem="dtv-hB-wvh" firstAttribute="centerX" secondItem="ssy-KU-ocm" secondAttribute="centerX" multiplier="0.5" id="2z0-TS-JSd"/>
+                            <constraint firstItem="2Fj-hP-kof" firstAttribute="centerX" secondItem="ssy-KU-ocm" secondAttribute="centerX" id="5A2-MK-CeK"/>
                             <constraint firstItem="dtv-hB-wvh" firstAttribute="width" secondItem="Ub6-sl-2Aq" secondAttribute="width" id="Ujh-6l-CfO"/>
                             <constraint firstItem="dtv-hB-wvh" firstAttribute="centerY" secondItem="ssy-KU-ocm" secondAttribute="centerY" id="XrB-Km-FdK"/>
                             <constraint firstItem="dtv-hB-wvh" firstAttribute="height" secondItem="Ub6-sl-2Aq" secondAttribute="height" id="fqc-si-3LI"/>
@@ -53,6 +61,7 @@
                     <connections>
                         <outlet property="btnOpenFrontDoor" destination="dtv-hB-wvh" id="Q81-iW-1LO"/>
                         <outlet property="btnOpenGarageDoor" destination="Ub6-sl-2Aq" id="dPL-Z8-SIb"/>
+                        <outlet property="lblAuthentication" destination="2Fj-hP-kof" id="8Yo-lp-mKM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>

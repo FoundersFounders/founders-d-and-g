@@ -35,7 +35,7 @@ class ViewController: UIViewController {
     }
     
     // https://stackoverflow.com/a/49454931
-    private func showToast(message : String, seconds: Double = 1.5) {
+    private func showToast(message: String, seconds: Double = 1.5) {
         let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
         alert.view.backgroundColor = UIColor.black
         alert.view.alpha = 0.6
