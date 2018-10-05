@@ -14,9 +14,22 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     @IBOutlet weak var btnOpenFrontDoor: UIButton!
     @IBOutlet weak var btnOpenGarageDoor: UIButton!
     
+    private let slack = Slack()
+    
     // https://jgreen3d.com/animate-ios-buttons-touch/
     @IBAction func buttonTouched(_ sender: UIButton) {
-        animate(on: self, btn: sender, onComplete: {() in })
+        animate(on: self, btn: sender, onComplete: {() in
+            switch sender {
+            case self.btnOpenFrontDoor:
+                self.slack.openFrontDoor()
+                break
+            case self.btnOpenGarageDoor:
+                self.slack.openGarageDoor()
+                break
+            default:
+                break
+            }
+        })
     }
     
     func customize(btn: UIButton) {        

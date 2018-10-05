@@ -12,7 +12,6 @@ import WebKit
 class SlackViewController: UIViewController, WKNavigationDelegate {
     
     var webView: WKWebView!
-    let defaults = UserDefaults.standard
     
     override func viewDidLoad() {
         let myURL = URL(string:"https://slack.com/oauth/authorize?client_id=\(SlackUtil.clientID)&client_secret=\(SlackUtil.clientSecret)&scope=\(SlackUtil.scope)&team=\(SlackUtil.team)")
@@ -89,7 +88,7 @@ class SlackViewController: UIViewController, WKNavigationDelegate {
                             return
                         }
                         
-                        self.defaults.set(access_token, forKey: SlackUtil.defaultKey)
+                        SlackUtil.defaults.set(access_token, forKey: SlackUtil.defaultKey)
                     }
                 } catch {
                     print("Error trying to convert data to JSON")

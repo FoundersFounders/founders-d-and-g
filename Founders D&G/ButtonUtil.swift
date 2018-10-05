@@ -17,11 +17,13 @@ func addShadowTo(btn: UIButton) {
 }
 
 func animate(on: UIViewController, btn: UIButton, onComplete: @escaping () -> Void) {
-    UIButton.animate(withDuration: 0.2,
+    let animationLength = 0.2
+
+    UIButton.animate(withDuration: animationLength/2,
                      animations: {btn.transform = CGAffineTransform(scaleX: 0.925, y: 0.91)},
                      completion: { _ in
                         UIButton.animate(
-                            withDuration: 0.2,
+                            withDuration: animationLength/2,
                             animations: {btn.transform = CGAffineTransform.identity},
                             completion: { _ in onComplete()})
     })

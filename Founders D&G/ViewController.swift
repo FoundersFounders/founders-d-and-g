@@ -19,12 +19,17 @@ class ViewController: UIViewController {
     // https://jgreen3d.com/animate-ios-buttons-touch/
     @IBAction func buttonTouched(_ sender: UIButton) {
         animate(on: self, btn: sender, onComplete: {() -> Void in
-//            let btnTitle = sender.titleLabel?.text ?? "[Button Title missing]"
-//            self.showToast(message : "Opening from \"\(btnTitle)\"")
-            if self.slack.isAuthenticated() {
-                self.slack.openFrontDoor()
-            } else {
-                self.present(SlackViewController(), animated: true, completion: nil)
+            switch sender {
+            case self.btnOpenFrontDoor:
+                self.handle(shortcut: .openFrontDoor)
+                break
+            case self.btnOpenGarageDoor:
+                self.handle(shortcut: .openGarageDoor)
+                break
+            case self.btnSettings:
+                break
+            default:
+                break
             }
         })
     }
@@ -43,11 +48,11 @@ class ViewController: UIViewController {
         }
     }
     
-    private func customize(btn: UIButton) {
+    private func customize(btn: UIButton, action: ShortcutEnum? = nil) {
         addShadowTo(btn: btn)
         
         btn.layer.cornerRadius = 3.0
-        
+
         btn.addTarget(self, action: #selector(buttonTouched(_:)), for: .touchUpInside)
     }
 
@@ -58,11 +63,31 @@ class ViewController: UIViewController {
         customize(btn: btnOpenFrontDoor)
         customize(btn: btnOpenGarageDoor)
         customize(btn: btnSettings)
+        
+        if !self.slack.isAuthenticated() {
+            self.present(SlackViewController(), animated: true)
+        }
     }
     
     func handle(shortcut: ShortcutEnum) {
-        let action = shortcut.rawValue
-        showToast(message: "Opening from \(action)")
+        if !self.slack.isAuthenticated() {
+            self.present(SlackViewController(), animated: true)
+        } else {
+            openDoor(shortcut: shortcut)
+        }
+    }
+    
+    func openDoor(shortcut: ShortcutEnum) {
+        switch shortcut {
+        case .openFrontDoor:
+            self.showToast(message : "Opening front door...")
+            self.slack.openFrontDoor()
+            break
+        case .openGarageDoor:
+            self.showToast(message : "Opening garage door...")
+            self.slack.openGarageDoor()
+            break
+        }
     }
 }
 

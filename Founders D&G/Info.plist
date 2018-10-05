@@ -61,6 +61,6 @@
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>The app requires &apos;While Using the App&apos; location to prevent you from opening the doors while you are not close to the building.</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>The app requires &apos;Always&apos; to, besides preventing you open the doors while you are far from the building, present you location aware notifications.</string>
+	<string>The app requires &apos;While Using the App&apos; location to prevent you from opening the doors while you are not close to the building.</string>
 </dict>
 </plist>

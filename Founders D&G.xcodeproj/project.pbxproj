@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		A96261E22164AC7F00EF8580 /* SlackUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AF0C8B216181DF003713FC /* SlackUtil.swift */; };
+		A96261E32167ADF400EF8580 /* Slack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AF0C89216176D6003713FC /* Slack.swift */; };
+		A96261E42167AEBA00EF8580 /* ShortcutEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99056A32157BFC200CED4EB /* ShortcutEnum.swift */; };
+		A96261E52167AEBD00EF8580 /* SlackUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AF0C8B216181DF003713FC /* SlackUtil.swift */; };
 		A990568F21566C1900CED4EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A990568E21566C1900CED4EB /* AppDelegate.swift */; };
 		A990569121566C1900CED4EB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A990569021566C1900CED4EB /* ViewController.swift */; };
 		A990569421566C1900CED4EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A990569221566C1900CED4EB /* Main.storyboard */; };
@@ -195,6 +198,9 @@
 		A990568321566C1900CED4EB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					frontDoor,
+				);
 				LastSwiftUpdateCheck = 1000;
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = "António Ramadas";
@@ -279,7 +285,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A96261E52167AEBD00EF8580 /* SlackUtil.swift in Sources */,
 				A99056AF2157E08500CED4EB /* TodayViewController.swift in Sources */,
+				A96261E32167ADF400EF8580 /* Slack.swift in Sources */,
+				A96261E42167AEBA00EF8580 /* ShortcutEnum.swift in Sources */,
 				A99056BF215AB18300CED4EB /* ButtonUtil.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
