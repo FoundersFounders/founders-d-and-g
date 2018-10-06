@@ -28,4 +28,4 @@ In this folder you can find 4 shortcuts:
 
 Just open them on your iPhone or iPad and set up the access token.
 
-You can copy the access token on the [app](../app/README.MD#the-app-itself) or copy it from [Founders Founders Door Services](http://www.founders-founders.com/doorservices/). Just place the access token on the text field of the shortcut that sets the variable `Token`.
+You can copy the access token on the [app](../app#the-app-itself) or copy it from [Founders Founders Door Services](http://www.founders-founders.com/doorservices/). Just place the access token on the text field of the shortcut that sets the variable `Token`.
