@@ -12,7 +12,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var btnOpenFrontDoor: UIButton!
     @IBOutlet weak var btnOpenGarageDoor: UIButton!
-    @IBOutlet weak var btnSettings: UIButton!
+    @IBOutlet weak var btnSiriShortcuts: UIButton!
     
     private let slack = Slack()
     
@@ -26,7 +26,9 @@ class ViewController: UIViewController {
             case self.btnOpenGarageDoor:
                 self.handle(shortcut: .openGarageDoor)
                 break
-            case self.btnSettings:
+            case self.btnSiriShortcuts:
+                let url = URL(string: "https://github.com/antonio-ramadas/founders-d-and-g")!
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
                 break
             default:
                 break
@@ -62,7 +64,7 @@ class ViewController: UIViewController {
         
         customize(btn: btnOpenFrontDoor)
         customize(btn: btnOpenGarageDoor)
-        customize(btn: btnSettings)
+        customize(btn: btnSiriShortcuts)
         
         if !self.slack.isAuthenticated() {
             self.present(SlackViewController(), animated: true)
