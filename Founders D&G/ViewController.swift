@@ -36,6 +36,19 @@ class ViewController: UIViewController {
         })
     }
     
+    @objc func longPress(_ gesture: UILongPressGestureRecognizer) {
+        if gesture.state == UIGestureRecognizer.State.began {
+            let msg: String
+            if (slack.isAuthenticated()) {
+                UIPasteboard.general.string = SlackUtil.defaults.string(forKey: SlackUtil.defaultKey)
+                msg = "Access Token copied"
+            } else {
+                msg = "You need to authenticate first"
+            }
+            showToast(message: msg)
+        }
+    }
+    
     // https://stackoverflow.com/a/49454931
     private func showToast(message: String, seconds: Double = 1.5) {
         let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
@@ -65,6 +78,9 @@ class ViewController: UIViewController {
         customize(btn: btnOpenFrontDoor)
         customize(btn: btnOpenGarageDoor)
         customize(btn: btnSiriShortcuts)
+        
+        let longPress = UILongPressGestureRecognizer(target: self, action: #selector(longPress(_:)))
+        btnSiriShortcuts.addGestureRecognizer(longPress)
         
         if !self.slack.isAuthenticated() {
             self.present(SlackViewController(), animated: true)
