@@ -10,7 +10,7 @@ You can find more information about the app at [app/](app/).
 
 ## [Siri Shortcuts](siri-shortcuts/)
 
-Unfortunately, Siri integration with the app is not currently possible, because it requires a paid developer account. However, iOS 12 allows to develop and share Siri Shortcuts. So, you can find at [siri-shortcuts/](siri-shortcuts/) multiple shortcuts for you to use with Siri!
+Unfortunately, Siri integration with the app is not currently possible, because it requires a personal developer account. However, iOS 12 allows to develop and share Siri Shortcuts. So, you can find at [siri-shortcuts/](siri-shortcuts/) multiple shortcuts for you to use with Siri!
 
 ## Acknowledgements
 
