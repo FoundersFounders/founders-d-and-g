@@ -14,7 +14,7 @@ class SlackViewController: UIViewController, WKNavigationDelegate {
     var webView: WKWebView!
     
     override func viewDidLoad() {
-        let myURL = URL(string:"https://slack.com/oauth/authorize?client_id=\(SlackUtil.clientID)&client_secret=\(SlackUtil.clientSecret)&scope=\(SlackUtil.scope)&team=\(SlackUtil.team)")
+        let myURL = URL(string:"https://slack-proxy-oauth2.herokuapp.com/oauth/authorize")
         let myRequest = URLRequest(url: myURL!)
         webView.load(myRequest)
     }
@@ -59,18 +59,10 @@ class SlackViewController: UIViewController, WKNavigationDelegate {
     }
     
     func saveAccessToken(code: String) {
-        let headers = ["Content-Type": "application/x-www-form-urlencoded"]
-        
-        let postData = NSMutableData(data: "client_id=\(SlackUtil.clientID)".data(using: String.Encoding.utf8)!)
-        postData.append("&client_secret=\(SlackUtil.clientSecret)".data(using: String.Encoding.utf8)!)
-        postData.append("&code=\(code)".data(using: String.Encoding.utf8)!)
-        
-        let request = NSMutableURLRequest(url: NSURL(string: "https://slack.com/api/oauth.access")! as URL,
+        let request = NSMutableURLRequest(url: NSURL(string: "https://slack-proxy-oauth2.herokuapp.com/api/oauth.access?code=\(code)")! as URL,
                                           cachePolicy: .useProtocolCachePolicy,
                                           timeoutInterval: 10.0)
-        request.httpMethod = "POST"
-        request.allHTTPHeaderFields = headers
-        request.httpBody = postData as Data
+        request.httpMethod = "GET"
         
         let session = URLSession.shared
         let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
