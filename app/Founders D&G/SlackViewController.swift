@@ -14,7 +14,7 @@ class SlackViewController: UIViewController, WKNavigationDelegate {
     var webView: WKWebView!
     
     override func viewDidLoad() {
-        let myURL = URL(string:"https://slack-proxy-oauth2.herokuapp.com/oauth/authorize")
+        let myURL = URL(string:"https://founders-founders-slack.herokuapp.com/oauth/authorize")
         let myRequest = URLRequest(url: myURL!)
         webView.load(myRequest)
     }
@@ -30,7 +30,7 @@ class SlackViewController: UIViewController, WKNavigationDelegate {
         
         if let url = navigationAction.request.url {
             if let host = url.host {
-                if (host == "localhost") {//founders-founders.com") {
+                if (host == SlackUtil.redirectHost) {
                     if let code = self.extractCodeFrom(query: url.query) {
                         saveAccessToken(code: code)
                     }
@@ -59,7 +59,7 @@ class SlackViewController: UIViewController, WKNavigationDelegate {
     }
     
     func saveAccessToken(code: String) {
-        let request = NSMutableURLRequest(url: NSURL(string: "https://slack-proxy-oauth2.herokuapp.com/api/oauth.access?code=\(code)")! as URL,
+        let request = NSMutableURLRequest(url: NSURL(string: "https://founders-founders-slack.herokuapp.com/api/oauth.access?code=\(code)")! as URL,
                                           cachePolicy: .useProtocolCachePolicy,
                                           timeoutInterval: 10.0)
         request.httpMethod = "GET"
