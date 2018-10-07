@@ -8,7 +8,9 @@
 
 import Foundation
 
-struct SlackUtil {    
+struct SlackUtil {
+    static let channel = "general"
+    
     static let defaults = UserDefaults.init(suiteName: ProcessInfo.processInfo.environment["suiteName"])!
     static let defaultKey = "accessToken"
 }

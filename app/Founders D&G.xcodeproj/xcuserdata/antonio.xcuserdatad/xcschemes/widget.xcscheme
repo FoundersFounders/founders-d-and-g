@@ -87,6 +87,13 @@
             ReferencedContainer = "container:Founders D&amp;G.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
+      <EnvironmentVariables>
+         <EnvironmentVariable
+            key = "suiteName"
+            value = "group.com.antonio-ramadas.founders-d-and-g"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+      </EnvironmentVariables>
       <AdditionalOptions>
       </AdditionalOptions>
       <LocationScenarioReference

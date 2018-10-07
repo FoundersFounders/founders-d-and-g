@@ -48,10 +48,10 @@ class Slack {
     private func open(door: ShortcutEnum) {
         switch door {
         case .openFrontDoor:
-            send(message: "Open Front Door")
+            send(message: "@door-service: open - via iOS app <https://github.com/antonio-ramadas/founders-d-and-g|get yours here>")
             break
         case .openGarageDoor:
-            send(message: "Open Garage Door")
+            send(message: "@door-service: garage - via iOS app <https://github.com/antonio-ramadas/founders-d-and-g|get yours here>")
             break
         }
     }
@@ -72,7 +72,7 @@ class Slack {
         
         let postData = NSData(data: """
                     {
-                    "channel": "general",
+                    "channel": "\(SlackUtil.channel)",
                     "text": "\(message)",
                     "link_names": 1,
                     "as_user": true

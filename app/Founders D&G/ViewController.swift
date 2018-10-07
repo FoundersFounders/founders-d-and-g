@@ -40,7 +40,7 @@ class ViewController: UIViewController {
         if gesture.state == UIGestureRecognizer.State.began {
             let msg: String
             if (slack.isAuthenticated()) {
-                UIPasteboard.general.string = SlackUtil.defaults.string(forKey: SlackUtil.defaultKey)
+                UIPasteboard.general.string = slack.getAccessToken()!
                 msg = "Access Token copied"
             } else {
                 msg = "You need to authenticate first"
