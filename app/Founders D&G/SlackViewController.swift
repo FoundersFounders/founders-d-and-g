@@ -81,6 +81,8 @@ class SlackViewController: UIViewController, WKNavigationDelegate {
                         }
                         
                         SlackUtil.defaults.set(access_token, forKey: SlackUtil.defaultKey)
+                        
+                        SlackUtil.defaults.didChangeValue(forKey: SlackUtil.defaultKey)
                     }
                 } catch {
                     print("Error trying to convert data to JSON")

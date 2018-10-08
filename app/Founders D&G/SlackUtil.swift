@@ -12,6 +12,6 @@ struct SlackUtil {
     static let channel = "door"
     static let redirectHost = "www.founders-founders.com"
     
-    static let defaults = UserDefaults.init(suiteName: ProcessInfo.processInfo.environment["suiteName"])!
+    static let defaults = UserDefaults.init(suiteName: "group.com.antonio-ramadas.founders-d-and-g")!
     static let defaultKey = "accessToken"
 }

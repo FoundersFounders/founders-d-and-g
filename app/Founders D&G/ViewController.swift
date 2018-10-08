@@ -81,10 +81,6 @@ class ViewController: UIViewController {
         
         let longPress = UILongPressGestureRecognizer(target: self, action: #selector(longPress(_:)))
         btnSiriShortcuts.addGestureRecognizer(longPress)
-        
-        if !self.slack.isAuthenticated() {
-            self.present(SlackViewController(), animated: true)
-        }
     }
     
     func handle(shortcut: ShortcutEnum) {
