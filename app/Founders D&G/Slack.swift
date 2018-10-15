@@ -48,10 +48,10 @@ class Slack {
     private func open(door: ShortcutEnum) {
         switch door {
         case .openFrontDoor:
-            send(message: "@door-service: open - via iOS app <https://github.com/antonio-ramadas/founders-d-and-g|get yours here>")
+            send(message: "@door-service: open - via iOS app <https://github.com/FoundersFounders/founders-d-and-g|get yours here>")
             break
         case .openGarageDoor:
-            send(message: "@door-service: garage - via iOS app <https://github.com/antonio-ramadas/founders-d-and-g|get yours here>")
+            send(message: "@door-service: garage - via iOS app <https://github.com/FoundersFounders/founders-d-and-g|get yours here>")
             break
         }
     }

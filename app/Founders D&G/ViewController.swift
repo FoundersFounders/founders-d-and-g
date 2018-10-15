@@ -27,7 +27,7 @@ class ViewController: UIViewController {
                 self.handle(shortcut: .openGarageDoor)
                 break
             case self.btnSiriShortcuts:
-                let url = URL(string: "https://github.com/antonio-ramadas/founders-d-and-g")!
+                let url = URL(string: "https://github.com/FoundersFounders/founders-d-and-g")!
                 UIApplication.shared.open(url, options: [:], completionHandler: nil)
                 break
             default:
